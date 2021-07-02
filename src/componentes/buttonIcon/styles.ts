@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     },
     iconWrapper : {
         width : 56,
-        height: 56,
+        height: 56 ,
         justifyContent: 'center',
         alignItems: 'center',
         borderRightWidth: 1,

@@ -5,8 +5,6 @@ import IllustrationImg from '../../assets/illustration.png';
 import { ButtonIcon } from '../../componentes/buttonIcon';
 
 export function Signin(){
-
-
   return(
     <View style={styles.container}>
       <StatusBar 
@@ -20,16 +18,12 @@ export function Signin(){
       resizeMode = "stretch" />
       <View style={styles.content}>
         <Text style={styles.title}> 
-          Organize {`\n`} suas jogatinas{`\n`} facilmete
+         Conecte-se {`\n`} e  Organize suas jogatinas
         </Text>
         <Text style={styles.subTitle}>
            Crie grupos para jogar seus games {`\n`} favoritos com seus amigos
         </Text>
-
-
-
-        <ButtonIcon />
-
+        <ButtonIcon title="Entrar com discord" activeOpacity={0.7} />
       </View>
     </View>
 
