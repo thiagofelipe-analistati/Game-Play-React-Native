@@ -19,9 +19,7 @@ export const styles = StyleSheet.create({
 
     },
     content :{
-        marginTop: -40,
-        paddingHorizontal: 50
-
+        marginTop: 42,
     },
     title : {
         color: theme.color.heading,
@@ -39,9 +37,10 @@ export const styles = StyleSheet.create({
         marginBottom: 64,
         fontFamily: theme.fonts.title500,
         lineHeight : 20
+    }, matches:{
+        marginTop: 24,
+        marginLeft: 24,
     }
-   
-
    
 
 })
