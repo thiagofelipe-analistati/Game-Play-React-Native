@@ -13,12 +13,10 @@ export const styles = StyleSheet.create({
     content: {
         width: 100,
         height: 116,
-        backgroundColor: theme.color.secondary40,
         borderRadius:8,
         justifyContent:'space-between',
         alignItems: 'center',
         paddingVertical: 20
-
     },
     title: {
         fontFamily: theme.fonts.title700,
@@ -36,7 +34,6 @@ export const styles = StyleSheet.create({
         borderColor: theme.color.secondary50,
         borderWidth:2,
         borderRadius: 3,
-        
     }, 
     checked :{
         position: "absolute",
@@ -45,7 +42,6 @@ export const styles = StyleSheet.create({
         width:10,
         height:10,
         backgroundColor: theme.color.primary,
-      
         borderRadius: 3
     }
 })  
