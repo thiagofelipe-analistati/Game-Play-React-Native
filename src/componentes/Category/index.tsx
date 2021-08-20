@@ -4,7 +4,6 @@ import {SvgProps} from 'react-native-svg'
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {styles} from './styles';
-import { categories } from '../../utils/categories';
 import { RectButtonProps, RectButton} from 'react-native-gesture-handler';
 import { theme } from '../../global/styles/them';
 

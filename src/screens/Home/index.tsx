@@ -1,21 +1,20 @@
 import React, {useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
 import {View, Text, Image, StatusBar, FlatList} from 'react-native';
 import {styles} from './styles'
-
 import { Profile } from '../../componentes/Profile';
 import { ButtonAdd } from '../../componentes/ButtonAdd';
 import { CategorySelect } from '../../componentes/CategorySelect';
 import { ListHeader } from '../../componentes/ListHeader';
 import { Appointment } from '../../componentes/Appointment';
 import { ListDivider } from '../../componentes/ListDivider';
-
-
-
+import { Background } from '../../componentes/background';
 
 
 export function Home(){
   const [category, setCategory] = useState ('');
-  
+  const navigation = useNavigation();
+
   const appointments =[
     {
       id: '1',
@@ -44,11 +43,18 @@ export function Home(){
   function handleCategorySelect( categoryId: string){
     categoryId === category ? setCategory(''): setCategory(categoryId);
   }
+
+  function handleAppointmentdetails(){
+      navigation.navigate('AppointmentDetails');
+  }
+  function handleAppointmentCreate(){
+    navigation.navigate('AppointmentCreate');
+  }
   return(
-      <View>
+      <Background >
         <View style={styles.header}> 
           <Profile />
-          <ButtonAdd />
+          <ButtonAdd onPress={handleAppointmentCreate}/>
         </View>
           <CategorySelect
           categorySelected={category}
@@ -62,14 +68,16 @@ export function Home(){
                 data={appointments}
                 keyExtractor={item => item.id}
                 renderItem={({item })=>(
-                  <Appointment data={item} 
-              />
+                  <Appointment 
+                  data={item} 
+                  onPress={handleAppointmentdetails}
+                  />
                  )}   
                  ItemSeparatorComponent ={() => <ListDivider />} 
                 style={styles.matches}
                  showsHorizontalScrollIndicator={false}
               />
           </View>
-      </View>
+      </Background>
   );
 }

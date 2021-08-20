@@ -4,7 +4,7 @@ import {styles} from './styles'
 import IllustrationImg from '../../assets/illustration.png';
 import { ButtonIcon } from '../../componentes/buttonIcon';
 import { useNavigation } from '@react-navigation/native';
-
+import { Background } from '../../componentes/background';
 
 export function Signin(){
 
@@ -15,6 +15,7 @@ export function Signin(){
   }
 
   return(
+    <Background> 
     <View style={styles.container}>
       <StatusBar 
         barStyle = "light-content"
@@ -38,6 +39,7 @@ export function Signin(){
         onPress={handleSignin} />
       </View>
     </View>
+    </Background>
 
   )
 }
