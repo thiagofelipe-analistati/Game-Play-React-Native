@@ -47,8 +47,9 @@ export function AppointmentCreate(){
         </Text>
         <CategorySelect 
         hasCheckBox
+        categorySelected={category}
         setCategory={setCategory}
-        categorySelected={Category}
+        
         />
         <View style={styles.form}>
           <RectButton onPress={handleOpenGuilds}>

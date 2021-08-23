@@ -2,7 +2,6 @@
 import React  from  'react'
 import { View, FlatList } from 'react-native'
 import { Guild, GuildProps } from '../../componentes/Guild';
-import { GuildIcon } from '../../componentes/GuildIcon';
 import { ListDivider } from '../../componentes/ListDivider';
 import {styles} from './styles'
 
@@ -22,7 +21,37 @@ export function Guilds ({handleGuildSelect} : Props ){
         },
         {
             id: '2',
-            name: 'Galera do Gamy',
+            name: 'Galera do Gamy ',
+            icon: 'image.png',
+            owner:  true,
+        },
+        {
+            id: '3',
+            name: 'Galera do Gamy ',
+            icon: 'image.png',
+            owner:  true,
+        },
+        {
+            id: '4',
+            name: 'Galera do Gamy ',
+            icon: 'image.png',
+            owner:  true,
+        },
+        {
+            id: '5',
+            name: 'Galera do Gamy ',
+            icon: 'image.png',
+            owner:  true,
+        },
+        {
+            id: '6',
+            name: 'Galera do Gamy ',
+            icon: 'image.png',
+            owner:  true,
+        },
+        {
+            id: '7',
+            name: 'Galera do Gamy ',
             icon: 'image.png',
             owner:  true,
         }
@@ -35,7 +64,9 @@ export function Guilds ({handleGuildSelect} : Props ){
                 renderItem={({item}) =>(
                     <Guild data={item} onPress={() => handleGuildSelect(item)} />
                 )}
-                ItemSeparatorComponent={() => <ListDivider />}
+                ItemSeparatorComponent={() => <ListDivider isCentered/>}
+                ListHeaderComponent={() => <ListDivider isCentered />}
+                contentContainerStyle={{paddingBottom: 68, paddingTop:104}}
                 showsVerticalScrollIndicator={false}
                 style ={ styles.guilds}
             />
