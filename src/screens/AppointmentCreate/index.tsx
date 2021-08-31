@@ -24,7 +24,9 @@ export function AppointmentCreate(){
   const [openGuildsModal, SetOpenGuildsModal] = useState (false); 
   const [guild, SetGuild] = useState <GuildProps> ({}as GuildProps); 
 
-
+  function handleCategorySelect( categoryId: string){
+    setCategory(categoryId);
+    }
   function handleOpenGuilds(){
     SetOpenGuildsModal(true);
   }
@@ -51,7 +53,7 @@ export function AppointmentCreate(){
         <CategorySelect 
         hasCheckBox
         categorySelected={category}
-        setCategory={setCategory}
+        setCategory={handleCategorySelect}
         
         />
         <View style={styles.form}>
