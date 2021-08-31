@@ -6,6 +6,7 @@ import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhan
 import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'react-native';
 import { Background } from './src/componentes/background';
+import {AuthProvider} from './src/hooks/auth'
 
 
 export default function App(){
@@ -28,7 +29,9 @@ export default function App(){
         backgroundColor="transparent"
         translucent
       />
-      <Routes />
+      <AuthProvider>
+         <Routes />
+      </AuthProvider>
       </Background>
   );
 }
