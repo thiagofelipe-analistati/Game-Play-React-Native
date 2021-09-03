@@ -37,6 +37,13 @@ export const styles = StyleSheet.create({
     }, matches:{
         marginTop: 24,
         marginLeft: 24,
+    }, 
+    textlogout: {
+        color: theme.color.heading,
+        textAlign: 'center',
+        fontSize:14,  
+        fontFamily: theme.fonts.text400,
+        lineHeight : 40
     }
    
 

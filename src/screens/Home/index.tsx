@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useNavigation } from '@react-navigation/native';
-import {View, Text, Image, StatusBar, FlatList} from 'react-native';
+import {View, Text, Image, StatusBar, FlatList, TouchableOpacity} from 'react-native';
 import {styles} from './styles'
 import { Profile } from '../../componentes/Profile';
 import { ButtonAdd } from '../../componentes/ButtonAdd';
@@ -9,6 +9,7 @@ import { ListHeader } from '../../componentes/ListHeader';
 import { Appointment } from '../../componentes/Appointment';
 import { ListDivider } from '../../componentes/ListDivider';
 import { Background } from '../../componentes/background';
+import firebase from '../../services/firebase/api';
 
 
 export function Home(){
@@ -83,7 +84,12 @@ export function Home(){
       description: 'É hoje que vamos chegar ao challenger sem perder uma'
     }
   ]
-
+  function handleLogout(){
+    firebase.auth().signOut().then(() => {
+      navigation.navigate("Login");
+    }).catch((error) => {
+    });
+  }
   function handleCategorySelect( categoryId: string){
     categoryId === category ? setCategory(''): setCategory(categoryId);
   }
@@ -98,6 +104,16 @@ export function Home(){
       <Background >
         <View style={styles.header}> 
           <Profile />
+          <TouchableOpacity 
+            style={styles.logout}
+            onPress={handleLogout}
+
+          >
+
+          <Text style={styles.textlogout}> Sair </Text>
+          </TouchableOpacity>
+
+  
           <ButtonAdd onPress={handleAppointmentCreate}/>
         </View>
           <CategorySelect
