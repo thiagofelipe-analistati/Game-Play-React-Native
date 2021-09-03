@@ -11,6 +11,7 @@ import { ReactNode } from "react";
     token: string;
  }
  import * as AuthSession from 'expo-auth-session';
+ import firebase from "../services/firebase/api";
 
  import {SCOPE,
         CLIENT_ID,
@@ -29,7 +30,7 @@ import { api } from "../services/api";
  }
  export const AuthContext = createContext({} as AuthContextData);
  function AuthProvider({children}: AuthProviderProps){
-    
+    const database = firebase.firestore();
     const [user, setUser] = useState<User>({
     } as User);
     const [loading, setLoading] = useState(false);

@@ -36,24 +36,49 @@ export const styles = StyleSheet.create({
         marginBottom: 64,
         fontFamily: theme.fonts.title500,
         lineHeight : 20
-    },imput: {
-        height: 50,
+    },
+    imput: {
+        height: 56,
         color: theme.color.secondary100,
         textAlign: 'center',
         fontSize: 15,  
         fontFamily: theme.fonts.text400,
-        lineHeight : 20,
         backgroundColor: theme.color.heading,
         borderRadius:8,
+    },  
+    button : {
+        width: '100%',
+        height: 56,
+        marginTop: 20,
+        backgroundColor: theme.color.primary,
+        borderRadius: 8,
+        justifyContent: 'center'
+    },
+    textbutton : {
+        color: theme.color.heading,
+        fontSize: 15,
+        textAlign: 'center',
+        fontFamily: theme.fonts.text500,
     },
     registar :{
         color: theme.color.heading,
         fontSize: 10,  
         fontFamily: theme.fonts.text400,
         lineHeight : 20,
-    }
-   
-
-   
-
+        marginTop: 20,
+    },
+    contentAlert:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+     }, 
+     alert : {
+        color: theme.color.primary,
+        fontSize: 16,
+        textAlign: 'center',
+        fontFamily: theme.fonts.text500,
+     },
+     linksubscribe : {  
+        color: "#1877f2",
+     }
 })

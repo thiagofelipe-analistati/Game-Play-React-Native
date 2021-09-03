@@ -1,11 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from '../screens/Home';
-import { Signin } from '../screens/Signin';
+import {NewUser} from '../screens/NewUser';
 import { AppointmentDetails } from '../screens/AppointmentDetails';
 import { AppointmentCreate } from '../screens/AppointmentCreate';
 import { theme } from '../global/styles/them';
 import { Guilds } from '../screens/Guilds';
+import { Login } from '../screens/Login';
+
 
 const {Navigator, Screen} = createStackNavigator();
 
@@ -19,8 +21,10 @@ export function AuthRoutes(){
             }
         }}
         >
-            <Screen name="Signin"
-              component={Signin } />
+            <Screen name="Login"
+              component={Login } />
+              <Screen name="NewUser"
+              component={NewUser } />
             <Screen name="Home"
                 component={Home } />
              <Screen 

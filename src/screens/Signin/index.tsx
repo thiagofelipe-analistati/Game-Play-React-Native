@@ -1,25 +1,33 @@
-import React from 'react';
-import {View, Text, Image, StatusBar} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {View, Text, TextInput ,Image, StatusBar, KeyboardAvoidingView} from 'react-native';
 import {styles} from './styles'
 import IllustrationImg from '../../assets/illustration.png';
 import { ButtonIcon } from '../../componentes/buttonIcon';
 import { Background } from '../../componentes/background';
 import {useAuth} from '../../hooks/auth';
 import { Alert } from 'react-native';
+import {MaterialCommunityIcons} from '@expo/vector-icons'
 
 
+import { Smallinput } from '../../componentes/Smallinput';
 export function Signin(){
+
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [errorLogin, setErroLogin] = useState("");
 
   const {user, signIn} = useAuth();
 
-  async function handleSignin(){
+   function LoginFirebase(){
     try {
-      await signIn();
+       signIn();
     } catch (error) {
       Alert.alert(error);
     }
-    
   }
+ useEffect(()=>{
+
+ },[]);
 
   return(
     <Background> 
@@ -37,13 +45,31 @@ export function Signin(){
         <Text style={styles.title}> 
          Conecte-se {`\n`} e  Organize suas jogatinas
         </Text>
-        <Text style={styles.subTitle}>
-           Crie grupos para jogar seus games {`\n`} favoritos com seus amigos
-        </Text>
+        <View > 
+          
+                <TextInput 
+                 style={[styles.imput, {marginBottom: 12}]}
+                  placeholder="Entre com o email"
+                  onChangeText={(text) => setEmail(text)}
+                  secureTextEntry={true}
+                  keyboardType="email-address"
+                  value={email}
+                />
+
+            <TextInput 
+                  style={[styles.imput, {marginBottom: 20 }]}
+                  secureTextEntry={true}
+                  placeholder="Entre com a senha"
+                  keyboardType="visible-password"
+                  onChangeText={(text) => setSenha(text)}
+                  value={senha} />
+          
+                  
+        </View>
         <ButtonIcon 
         title="Entrar com discord" 
     
-        onPress={handleSignin} />
+        onPress={LoginFirebase} />
       </View>
     </View>
     </Background>
